@@ -1,0 +1,27 @@
+{
+  "name": "github-2049",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild src/index.jsx --bundle --outfile=dist/out.js",
+    "build:dev": "yarn build --sourcemap --define:process.env.NODE_ENV=\"'development'\" --serve",
+    "build:prod": "yarn build --sourcemap --define:process.env.NODE_ENV=\"'production'\" --minify",
+    "dev": "concurrently 'yarn build:dev' 'yarn serve'",
+    "serve": "serve-index --dir=\"./dist\" --template=\"./src/index.html\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "esbuild": "^0.8.17",
+    "nodemon": "^2.0.6",
+    "serve-index-cli": "^1.2.1"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-three-fiber": "^5.3.7"
+  }
+}
